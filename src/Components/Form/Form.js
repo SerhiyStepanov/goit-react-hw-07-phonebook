@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import actions from "../../Redux/actions";
+import * as operations from "../Contacts/operations";
 import { IoIosPhonePortrait } from "react-icons/io";
 import shortid from "shortid";
 import s from "./Form.module.css";
@@ -44,7 +44,7 @@ export default function ContactForm() {
       alert("Enter name and number please ! ");
       return;
     }
-    dispatch(actions.addContact({ name, number }));
+    dispatch(operations.addContact({ name, number }));
     reset();
   };
 
