@@ -1,7 +1,7 @@
 import React from "react";
 import shortid from "shortid";
 import { useSelector, useDispatch } from "react-redux";
-import { getFilter } from "../Contacts/selectors";
+import { getFilter } from "../Contacts/contacts-selectors";
 import actions from "../../Redux/actions";
 import s from "./Filter.module.css";
 

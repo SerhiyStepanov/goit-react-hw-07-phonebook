@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as operations from "../Contacts/operations";
-import { getAllContacts } from "../Contacts/selectors";
+import { getAllContacts } from "../Contacts/contacts-selectors";
 import { IoIosPhonePortrait } from "react-icons/io";
 import shortid from "shortid";
 import s from "./Form.module.css";
