@@ -1,11 +1,12 @@
 import React from "react";
 import shortid from "shortid";
 import { useSelector, useDispatch } from "react-redux";
+import { getFilter } from "../Contacts/selectors";
 import actions from "../../Redux/actions";
 import s from "./Filter.module.css";
 
 export default function Filter() {
-  const value = useSelector((state) => state.contacts.Filter);
+  const value = useSelector((state) => getFilter(state));
   const dispatch = useDispatch();
 
   const onChange = (event) =>

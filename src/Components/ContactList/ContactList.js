@@ -1,19 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import * as operations from "../Contacts/operations";
+import { getVisibleContacts } from "../Contacts/selectors";
 import s from "./ContactList.module.css";
 import { useEffect } from "react";
 
-const getVisibleContacts = (items, filter) => {
-  const normalizedFilter = filter.toLowerCase();
-  return items.filter((item) => {
-    return item.name.toLowerCase().includes(normalizedFilter);
-  });
-};
-
 export default function ContactList() {
-  const items = useSelector((state) =>
-    getVisibleContacts(state.contacts.items, state.contacts.filter)
-  );
+  const items = useSelector((state) => getVisibleContacts(state));
 
   const dispatch = useDispatch();
 

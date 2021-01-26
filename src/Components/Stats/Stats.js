@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
+import { getAllContactsLength } from "../Contacts/selectors";
 import s from "./Stats.module.css";
 
 export default function Stats() {
-  const total = useSelector((state) => state.contacts.items.length);
+  const total = useSelector((state) => getAllContactsLength(state));
   return (
     <div>
       <p className={s.text}>

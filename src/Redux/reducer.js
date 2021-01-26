@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 import * as actions from "./actions";
 
 const items = createReducer([], {
-  [actions.fetchContactSuccess]: (_, action) => action.payload,
+  [actions.fetchContactSuccess]: (_, { payload }) => payload,
   [actions.addContactSuccess]: (state, { payload }) => [...state, payload],
   [actions.deleteContactSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),

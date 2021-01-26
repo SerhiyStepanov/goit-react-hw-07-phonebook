@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as operations from "../Contacts/operations";
+import { getAllContacts } from "../Contacts/selectors";
 import { IoIosPhonePortrait } from "react-icons/io";
 import shortid from "shortid";
 import s from "./Form.module.css";
@@ -9,7 +10,7 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
-  const items = useSelector((state) => state.contacts.items);
+  const items = useSelector((state) => getAllContacts(state));
   const dispatch = useDispatch();
 
   const inputNameId = shortid.generate();
