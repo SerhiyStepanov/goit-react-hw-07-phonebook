@@ -3,7 +3,7 @@ import * as actions from "../../Redux/actions";
 
 axios.defaults.baseURL = "http://localhost:3030";
 
-export const fetchContacts = () => async (dispatch) => {
+export const fetchContacts = () => (dispatch) => {
   dispatch(actions.fetchContactRequest());
 
   axios
